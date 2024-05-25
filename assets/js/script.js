@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const alarmSound = new Audio('../assets/sounds/Nuclear-Alarm.mp3'); // Path to your alarm sound file
     const explosionSound = new Audio('../assets/sounds/Nuclear-Explosion.mp3'); // Path to your explosion sound file
 
-    // Add an event listener to the button
-    button.addEventListener('click', function() {
+    // Function to handle the button click or touch
+    function handleButtonClick() {
         // Play the alarm sound
         alarmSound.play();
 
@@ -28,5 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
         alarmSound.addEventListener('ended', function() {
             explosionSound.play();
         }, { once: true }); // Use { once: true } to ensure the event listener is only called once
+    }
+
+    // Add event listeners for click and touch events
+    button.addEventListener('click', handleButtonClick);
+    button.addEventListener('touchend', function(event) {
+        event.preventDefault(); // Prevent any default touch behavior
+        handleButtonClick();
     });
 });
+
