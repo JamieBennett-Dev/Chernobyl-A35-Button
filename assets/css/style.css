@@ -5,7 +5,10 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background: #303e55;
+    background: url(../images/metal-bloody-background.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
