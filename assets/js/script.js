@@ -19,14 +19,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const alarmSound = new Audio('../assets/sounds/Nuclear-Alarm.mp3'); // Path to your alarm sound file
     const explosionSound = new Audio('../assets/sounds/Nuclear-Explosion.mp3'); // Path to your explosion sound file
 
+    // Preload the audio files
+    alarmSound.preload = 'auto';
+    explosionSound.preload = 'auto';
+
     // Function to handle the button click or touch
     function handleButtonClick() {
         // Play the alarm sound
-        alarmSound.play();
+        alarmSound.play().catch(error => {
+            console.error('Failed to play the alarm sound:', error);
+        });
 
         // Add an event listener to the alarm sound to play the explosion sound when the alarm finishes
         alarmSound.addEventListener('ended', function() {
-            explosionSound.play();
+            explosionSound.play().catch(error => {
+                console.error('Failed to play the explosion sound:', error);
+            });
         }, { once: true }); // Use { once: true } to ensure the event listener is only called once
     }
 
