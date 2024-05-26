@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const button = document.querySelector('.button');
 
     // Create audio objects for the sounds
-    const alarmSound = new Audio('../assets/sounds/Nuclear-Alarm.mp3'); // Path to your alarm sound file
-    const explosionSound = new Audio('../assets/sounds/Nuclear-Explosion.mp3'); // Path to your explosion sound file
+    const alarmSound = new Audio('/assets/sounds/Nuclear-Alarm.mp3'); // Path to your alarm sound file
+    const explosionSound = new Audio('/assets/sounds/Nuclear-Explosion.mp3'); // Path to your explosion sound file
 
     // Preload the audio files
     alarmSound.preload = 'auto';
