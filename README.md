@@ -1,4 +1,4 @@
-# Chernobyl A-35 Button
+# Chernobyl A3-5 Button
 
 ## The Infamous A3-5 Button, Which Acted as a Detonator in the Chernobyl Incident.
 
